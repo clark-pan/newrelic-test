@@ -1,0 +1,19 @@
+{
+  "name": "newrelic-test",
+  "version": "0.0.0",
+  "description": "Test application used for trying out RUM monitoring",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "proprietary",
+  "dependencies": {
+    "lodash": "~2.4.1",
+    "newrelic": "~1.4.0",
+    "q": "~1.0.1",
+    "express": "~3.5.1",
+    "express-hbs": "~0.7.9"
+  },
+  "engine": "node >= 0.10.0"
+}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="test">
+<head>
+  <title>New relic/AngularJS test</title>
+  {{{ newRelicScript }}}
+  {{#each vendorScripts}}
+    <script src="{{src}}"></script>
+  {{/each}}
+  {{#each appScripts}}
+    <script src="{{src}}"></script>
+  {{/each}}
+</head>
+<body ng-controller="MainController">
+  <label>Exception mode (Used to determine how $exceptionHandler will rethrow the error, please consult /client/main.js): <select ng-model="exceptionMode"><option value="0">Synchronous</option><option value="1">Asynchronous</option></select></label><br />
+  <button ng-click="nativeError()">Throw an native browser error(done via setTimeout to bust out of $digest)</button><br />
+  <button ng-click="throwError()">Throw an angular error</button><br />
+  <button ng-click="throwAngularjsTimeoutError()">Throw an async error (using $timeout)</button><br />
+  <button ng-click="throw404HttpError()">Throw a http error (making request to domain that should 404)</button><br />
+  <button ng-click="throw500HttpError()">Throw a http error (making request to API endpoint that returns 500)</button><br />
+  <button ng-click="rejectPromise()">Reject a $q promise</button><br />
+  <button ng-click="catchThrownPromise()">Throw an error in a promise, but catch it down the line</button><br />
+</body>
+</html>
